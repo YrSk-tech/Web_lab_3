@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFICETOOL</title>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+            <ul class="nav-section">
+                <li><a href="">Office tools</a></li>
+                <li><a href="">Your Office tools</a></li>
+                <li><a href="">Add Office tools</a></li>
+            </ul>
+        </nav>
+
+        <div class="office-tool-find">
+            <input type="text" id="find-office-tool" name="find-office-tool" class="find-office-tool" placeholder="Find office-tool you need...">
+
+            <button class="section-clear" id="clear-search">Clear</button>
+        </div>
+    </header>
+
+    <section class="office-tools">
+
+        <div class="section-sab">
+            <div class="section-sub-med">Office tools</div>
+            <div class="sorting">
+                <label for="sort-select">Sort By</label>
+                <select name="sort-select" id="sort-select" onchange="showMListSorted()">
+                <option value="none">none</option>
+                <option value="name">name</option>
+                <option value="price">price</option>
+            </select>
+            </div>
+            <hr size=3px width=500px>
+
+            <div class="section-calculate">
+                <button id="section-calculate-btn" onclick="countPriceOfМ()">Count</button>
+                <div id="total-price">Total price:</div>
+            </div>
+        </div>
+        <ul id="m-list" class="office-tool-list"></ul>
+        <div class="section-list"></div>
+    </section>
+    <section class="section-second">
+        <div class="section-wrapper">
+            <div class="for-create">
+                <h2> Create office tool </h2>
+            </div>
+            <div class="section-input">
+                <input type="text" id="name" class="section-input-text" placeholder="Enter name">
+                <input type="text" id="producer" class="section-input-text" placeholder="Enter producer">
+                <input type="text" id="price" class="section-input-text" placeholder="Enter price">
+            </div>
+            <div class="section-btn">
+                <button type="submit" id="section-add-button" class="section-add-btn" onclick="sendToFirebase()">Create</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
